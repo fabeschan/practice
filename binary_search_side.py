@@ -28,7 +28,7 @@ def binary_search_right(x, k):
 '''
 [2am, 3b]
 [3m, 3ab]
-
+[3am, 4b]
 
 '''
 
@@ -36,10 +36,5 @@ if __name__ == "__main__":
     x = [2, 2, 2, 3, 3, 4, 4, 4, 4, 5, 6, 6, 6, 7, 7]
 
     print x
-    print "left"
     for a in list(set(x)):
-        print "[{}]: {}? - {}".format(a, binary_search_left(x, a), x.index(a))
-    print
-    print "right"
-    for a in list(set(x)):
-        print "[{}]: {}? - {}".format(a, binary_search_right(x, a), len(x) - 1 - x[::-1].index(a))
+        print "count({}): {}".format(a, binary_search_right(x, a) - binary_search_left(x, a))
