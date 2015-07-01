@@ -24,14 +24,26 @@ def binary_search_iterative(x, k):
             a = m
     return a
 
+def binary_search_iterative2(x, k):
+    a = 0
+    b = len(x)
+
+    while x[a] != k:
+        m = (a + b) / 2
+        if x[m] < k:
+            a = m + 1
+        else:
+            b = m
+    return a
+
 if __name__ == '__main__':
     x = [52, 35, 123, 74, 77, 0, 3, -1, 15, 22, 10, 200, 260, 90, -8, -808]
     x.sort()
 
     print x
     for k in x:
-        print 'i[{}]? {}: {}'.format(k, x.index(k), binary_search_iterative(x, k))
-    for k in x:
-        print 'r[{}]? {}: {}'.format(k, x.index(k), binary_search_recursive(x, k))
+        print 'i[{}]? {}: {}'.format(k, x.index(k), binary_search_iterative2(x, k))
+    #for k in x:
+        #print 'r[{}]? {}: {}'.format(k, x.index(k), binary_search_recursive(x, k))
 
     embed()
