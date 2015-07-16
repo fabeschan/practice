@@ -61,8 +61,8 @@ def bts_template(var_list):
 
 class variable:
     '''
-    self.value = None
-    self.domain = []
+    self.value = None # set None as the initial value
+    self.domain = [...] # list of possible values
 
     '''
 
