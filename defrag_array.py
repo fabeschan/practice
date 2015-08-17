@@ -20,6 +20,8 @@ def defrag_2(a):
     a[len(b):len(a)] = [None]*(len(a)-len(b))
 
 def defrag_3(a):
+    # O(n), in-place; most efficient so far
+    # Code looks annoying though
     i, j = 0, 0
     while i < len(a):
         if a[i] is None and a[j] is not None:
@@ -45,6 +47,9 @@ def defrag_4(a):
         else:
             i += 1
     a.extend([None]*count)
+
+def defrag_5(a):
+    pass
 
 if __name__ == '__main__':
     for f in tester.list_func():
